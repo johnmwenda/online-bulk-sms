@@ -1,0 +1,465 @@
+/* Global */
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+	color: #8a8683;
+	background-color:#ffffff;
+}
+img {
+	max-width: 100%;
+}
+a:link {
+	color: #f68f67;
+	text-decoration: none;
+}
+a:hover {
+	color: #bde2df;
+	text-decoration: none;
+}
+a:visited {
+	color: #f68f67;
+	text-decoration: none;
+}
+
+
+
+
+
+/* Navigation */
+
+.menu {
+	position:fixed;
+	top:0px;
+	width:100%; 
+	height:auto; 
+    background-color: #FFFFFF;
+	z-index:100;
+}
+#logo {
+	/*text-align: center;  JOHN-EDIT*/
+	margin: 15px 0;
+}
+#nav {
+	text-align: right;
+	margin: 30px 0 0 0;
+}
+.navigation{
+	float: right;
+	list-style: none;
+	margin: 0;
+}
+.navigation li{
+	float: left;
+	padding:0 0 0 50px;
+}
+.navigation li:hover{
+	cursor:pointer;
+	color: #a9d3d0;
+}
+
+.navigation .active{
+	cursor:pointer;
+	color: #f68f67;
+	font-weight:bold;
+}
+
+/* JOHN EDITS */ 
+#content{
+	border: 1px solid rgba(0,0,0,0.15);
+	padding:15px 1px 0 1px;
+}
+
+
+
+/* General Slides */ 
+
+.slide{
+	background-attachment: fixed;
+	width:100%;
+	height:auto;
+	position: relative;
+	padding:100px 0;
+}
+
+
+
+/* Slide 1 */ 
+
+#slide1{
+	background-color:#ffffff;
+}
+#slide1 h1 {
+	font-size: 3.8em;
+	letter-spacing: -3px;
+	line-height: 0px;
+	color:#8a8683;
+	font-weight: 700;
+}
+#slide1 h2 {
+	font-size: 2em;
+	color: #8a8683;
+	line-height: 0px;
+	padding-bottom:20px;
+	font-weight: 400;
+}
+
+
+
+
+/* Slide 2 */ 
+
+#slide2{
+	background-image:url('../images/footprints.png');
+	background-color:#f68f67;
+	color:#ffffff;
+}
+#slide2 h1 {
+	font-size: 3.8em;
+	letter-spacing: -3px;
+	line-height: 0px;
+	color:#ffffff;
+	font-weight: 700;
+}
+#slide2 h2 {
+	font-size: 2em;
+	color: #ffffff;
+	line-height: 0px;
+	padding-bottom:20px;
+	font-weight: 400;
+}
+
+
+
+
+/* Slide 3 */ 
+
+#slide3{
+	background-color:#ffffff;
+}
+#slide3 h1 {
+	font-size: 3.8em;
+	letter-spacing: -3px;
+	line-height: 0px;
+	color:#8a8683;
+	font-weight: 700;
+}
+#slide3 h2 {
+	color: #8a8683;
+	line-height: 0px;
+	padding-bottom:20px;
+	font-weight: 400;
+}
+#test{
+	background-color:#bde2df;
+	color:#ffffff;
+	text-align:center;
+	font-size: 2em;
+	font-weight: 400;
+}
+
+
+
+
+/* Slide 4 */
+
+#slide4{
+	background-image:url('../images/sunglasses.png');
+	background-color:#8a8683;
+	color:#ffffff;
+}
+#slide4 h1 {
+	font-size: 3.8em;
+	letter-spacing: -3px;
+	line-height: 0px;
+	color:#ffffff;
+	font-weight: 700;
+}
+#slide4 h2 {
+	font-size: 2em;
+	color: #ffffff;
+	line-height: 0px;
+	padding-bottom:20px;
+	font-weight: 400;
+}
+
+
+
+
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+
+#logo {
+	width: 100%;
+	text-align: center;
+}
+
+#nav {
+	width:100%;
+	text-align:center;
+	margin:10px 0;
+}
+
+.navigation{
+	width: 100%;
+	float: center;
+	list-style: none;
+	margin: 0;
+	padding:0;
+}
+
+.navigation li{
+	float: left;
+	width:25%;
+	padding:0;
+}
+
+.slide{
+	background-attachment: fixed;
+	width:100%;
+	position: relative;
+	padding:150px 0;
+}
+
+#decorative {
+	display:none;
+}
+
+#content {
+	text-align:center;
+	width:100%;
+}
+
+#slide1 h1 {
+	line-height: 1em;
+}
+#slide1 h2 {
+	line-height: 1em;
+}
+#slide2 h1 {
+	line-height: 1em;
+}
+#slide2 h2 {
+	line-height: 1em;
+}
+#slide3 h1 {
+	line-height: 1em;
+}
+#slide3 h2 {
+	line-height: 1em;
+}
+#slide4 h1 {
+	line-height: 1em;
+}
+#slide4 h2 {
+	line-height: 1em;
+}
+
+}
+
+
+
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+
+#logo {
+	width: 100%;
+	text-align: center;
+}
+
+#nav {
+	width:100%;
+	margin:5px 0;
+}
+
+.navigation{
+	width: 100%;
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding:0;
+}
+
+.navigation li{
+	float: left;
+	width:25%;
+}
+
+.slide{
+	background-attachment: fixed;
+	width:100%;
+	position: relative;
+	padding:150px 0;
+}
+
+
+#slide1 h1 {
+	line-height: 1em;
+}
+#slide1 h2 {
+	line-height: 1em;
+}
+#slide2 h1 {
+	line-height: 1em;
+}
+#slide2 h2 {
+	line-height: 1em;
+}
+#slide3 h1 {
+	line-height: 1em;
+}
+#slide3 h2 {
+	line-height: 1em;
+}
+#slide4 h1 {
+	line-height: 1em;
+}
+#slide4 h2 {
+	line-height: 1em;
+}
+}
+
+/* ==================== Form style sheet ==================== */
+form{width:1000px;margin: 20px auto 0;}
+table.form {  border-collapse: collapse; }
+
+table.form th, table.form td { padding: 4px 5px; text-align: left; font-weight: normal; }
+
+table.form label { font-family: Verdana, Arial, Helvetica, sans-serif; color: #8a8683; margin-right: 12px; font-size:14px; }
+table.form td span { font-size: 0.9em; color: #181818; margin-left: 8px; }
+table.form td samp { font: 1em Verdana, Arial, Helvetica, sans-serif; color: #000000; }
+
+table.form input { width: 340px; }
+table.form input.answer { width: auto; }
+table.form textarea { width: 385px; height: 160px; font-size:13px }
+
+table.form input.inp-text, table.form input.answer, table.form textarea
+{ border: 1px solid #909090; border-right: 1px solid #BBBBBB; border-bottom: 1px solid #BBBBBB; padding: 3px; }
+table.form input:focus, table.form textarea:focus { border: 1px solid #606060; } /* does not work in IE */
+
+table.form th.message-up { vertical-align: top !important; }
+
+table.form label.invisible { visibility: hidden; }
+
+table.form td.submit-button-right { text-align: right !important; }
+table.form input.submit-text { font: 1.4em Georgia, "Times New Roman", Times, serif; letter-spacing: 1px; width: auto; }
+
+/* ==================== Form style sheet END ==================== */
+
+/* ==================== Tabs Section Start ==================== */
+.tabs {
+      position: relative;   
+      min-height: 250px; /* This part sucks */
+      clear: both;
+      margin: 0px 0;
+    }
+    .tab {
+      float: left;
+	  
+    }
+    .tab label {
+      background: #eee; 
+      padding: 1px; 
+      border: 1px solid #ccc; 
+      margin-left: -1px; 
+      position: relative;
+      left: 1px; 
+	  cursor:pointer;
+    }
+    .tab [type=radio] {
+      display: none;   
+    }
+    .content {
+      position: absolute;
+      top: -6px;
+      left: 0;
+      background: white;
+      right: 0;
+      bottom: 0;
+      padding:1px;
+      overflow:hidden;
+	  font-size:13px;
+	  width:395px
+    }
+	.content p{margin:0;}
+	#content-tab-2 input{width:20px}
+	#content-tab-2 br{margin-bottom:3px;}
+    [type=radio]:checked ~ label {
+      background: #eee;
+      z-index: 2;
+	  padding:5px;
+    }
+    [type=radio]:checked ~ label ~ .content {
+      z-index: 1;
+    }
+/* ==================== Tabs Section End ==================== */
+
+/* ==================== Three tabs send sms page Start ==================== */
+.recepient-tabs{
+list-style:none;
+margin:0
+}
+.recepient-tabs li{
+float:left;
+padding:5px;
+background-color:#eee;
+margin:2px;
+cursor:pointer;
+}
+/* ==================== Three tabs send sms page End ==================== */
+
+/*Groups view in GROUPS*/
+#submit-button{font-size:medium;
+cursor:pointer;vertical-align:middle;padding:5px 10px;line-height:1.5;border-radius:3px;background-color:#008CBA;color:white;}
+
+
+.group-view {padding: 0 0 20px 40px;
+    border: 1px solid red;
+    background: #F9F9F9;margin-bottom:20px}
+	
+.group-view a{display:inline-block;text-align:center;cursor:pointer;whitespace:nowrap;vertical-align
+		:middle;padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px;background-color:#008CBA;color:white;}
+
+.group-view a:hover{background-color:#006687}
+
+/*Overlay and popup for editting contacts*/
+  #overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #999;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: 100;
+}
+#popup {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  width: 200px;
+  height: 200px;
+  margin-left: -100px; /*Half the value of width to center div*/
+  margin-top: -100px; /*Half the value of height to center div*/
+  z-index: 200;
+}
+#popupclose {
+  float: right;
+  padding: 10px;
+  cursor: pointer;
+}
+.popupcontent {
+  padding: 10px;
+}
+#button {
+  cursor: pointer;
+}
+/*end of overlay*/
+
+
