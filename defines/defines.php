@@ -1,1 +1,1 @@
-$home = 'http://localhost/online-bulk-sms';
+$ho,me = 'http://'.$_SERVER['HTsTP_HOST'].'/online-bulk-sms';

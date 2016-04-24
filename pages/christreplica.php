@@ -4,10 +4,11 @@ $path .= "/online-bulk-sms/includes/defines.php";
 include $path;
 include $db_connect_path;
 include $header_path;
-function christReplicaView(){
+function christReplicaViewandEdit(){
 	global $connect;
 	
 	if(isset($_GET['user_id'])&&ctype_digit($_GET['user_id'])){
+		#if user_id is set then retrieve details of the user so that they can be editted
 		$user_id=$_GET['user_id'];
 		$SQL = "select * from users where user_id=$user_id";
 		$run_SQL = mysqli_query($connect, $SQL);
@@ -39,23 +40,26 @@ function christReplicaView(){
 					</div> ";
 	}
 	else{
-		$SQL = "select * from christ_replica,users where christ_replica.user_id=users.user_id ";
+		#select only members from Christ replica and display them on the table
+		$SQL = "select * from christreplica,users where christreplica.user_id=users.user_id ";
 		$run_SQL = mysqli_query($connect, $SQL);
 		$num=0;
-		while($row_SQL = mysqli_fetch_array($run_SQL) ){
-			$num++;
-			$user_id = $row_SQL['user_id'];
-			$firstname = $row_SQL['firstname'];
-			$lastname = $row_SQL['lastname'];
-			$telephone = $row_SQL['telephone'];
-			$email = $row_SQL['email'];
-			echo "<tr>
-								<td>$num</td>
-								<td>$firstname $lastname </td>
-								<td>$telephone</td>
-								<td>$email</td>
-								<td><a href=\"?user_id=$user_id\">Edit</a></td>
-				</tr>";	
+		if(mysqli_num_rows($run_SQL)){
+			while($row_SQL = mysqli_fetch_array($run_SQL) ){
+				$num++;
+				$user_id = $row_SQL['user_id'];
+				$firstname = $row_SQL['firstname'];
+				$lastname = $row_SQL['lastname'];
+				$telephone = $row_SQL['telephone'];
+				$email = $row_SQL['email'];
+				echo "<tr>
+									<td>$num</td>
+									<td>$firstname $lastname </td>
+									<td>$telephone</td>
+									<td>$email</td>
+									<td><a href=\"?user_id=$user_id\">Edit</a></td>
+					</tr>";	
+			}
 		}
 		
 	}
@@ -85,7 +89,7 @@ function christReplicaView(){
 					<h3>Christ Replica Group</h3>
 					<?php if(isset($_GET['user_id'])&&ctype_digit($_GET['user_id'])):?>
 					
-					<?php christReplicaView() ?>
+					<?php christReplicaViewandEdit() ?>
 			
 					
 							
@@ -98,7 +102,7 @@ function christReplicaView(){
 								<th><strong>E-Mail</strong></th>
 								<th><strong>Edit</strong></th>
 							</tr>
-							<?php christReplicaView() ?>
+							<?php christReplicaViewandEdit() ?>
 						</table>
 						
 						<?php endif; ?>

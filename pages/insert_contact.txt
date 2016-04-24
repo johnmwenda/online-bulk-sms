@@ -1,7 +1,11 @@
 <?php 
-function allContactsViewandEdit(){
+$path = $_SERVER['DOCUMENT_ROOT'];
+$path .= "/online-bulk-sms/includes/defines.php";
+include $path;
+include $db_connect_path;
+include $header_path;
+function christReplicaViewandEdit(){
 	global $connect;
-	global $home;
 	
 	if(isset($_GET['user_id'])&&ctype_digit($_GET['user_id'])){
 		#if user_id is set then retrieve details of the user so that they can be editted
@@ -14,7 +18,6 @@ function allContactsViewandEdit(){
 		$telephone = $row_SQL['telephone'];
 		$email = $row_SQL['email'];
 		
-	
 		echo "
 				<h4>Edit details of member </h4>
 				<div>
@@ -32,20 +35,15 @@ function allContactsViewandEdit(){
 					<span><input type=\"text\" name=\"edit_email\" value=\"$email\"/></span> <br/>
 					
 					<input type=\"submit\" value=\"Save changes\"/>
-					<input type=\"button\" value=\"Cancel\" onclick = \"goBack()\" />
+					<input type=\"submit\" value=\"Cancel\"/>
 					</form>
 					</div> ";
 	}
 	else{
-			echo "	<h3 style=\"display:inline\">All Contacts</h3>
-					<span>&nbsp;&nbsp;&nbsp;[<a href=\" $home.'/pages/insert_contact.php\">Add new Contact</a>]</span>
-					<span>&nbsp;&nbsp;&nbsp;[Upload Excel file]</span>
-					<h5>Members that are added here will be in a default group called \"ALL\"</h5>";
 		#select only members from Christ replica and display them on the table
-		$SQL = "select * from users";
+		$SQL = "select * from christ_replica,users where christ_replica.user_id=users.user_id ";
 		$run_SQL = mysqli_query($connect, $SQL);
 		$num=0;
-		if(mysqli_num_rows($run_SQL)){
 		while($row_SQL = mysqli_fetch_array($run_SQL) ){
 			$num++;
 			$user_id = $row_SQL['user_id'];
@@ -60,17 +58,36 @@ function allContactsViewandEdit(){
 								<td>$email</td>
 								<td><a href=\"?user_id=$user_id\">Edit</a></td>
 				</tr>";	
-			}
 		}
 		
 	}
 }
 ?>
-				<div>
+	<div class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
+		<div class="container clearfix">
+
+			<div id="content" class="grid_12">
+				<div><h2>Online Bulk SMS System</h2></div>
 				
+				<!-- JOHN-EDIT replaced with tables<div id="col1" class="columns">
+				<h3>Messages sent today</h3>
+				<p>2000</p>
+				</div>
+				<div id="col2" class="columns">
+				<h3>Total sent messages</h3>
+				<p>2000</p>
+				</div>
+				<div id="col3" class="columns">
+				<h3>Total Unsent messages</h3>
+				<p>2000</p></div>
+				<div id="col4" class="columns">
+				<h3>Balance</h3>
+				<p>2000</p></div>	-->
+				<div>
+					<h3>Christ Replica Group</h3>
 					<?php if(isset($_GET['user_id'])&&ctype_digit($_GET['user_id'])):?>
 					
-					<?php allContactsViewandEdit() ?>
+					<?php christReplicaViewandEdit() ?>
 			
 					
 							
@@ -83,10 +100,17 @@ function allContactsViewandEdit(){
 								<th><strong>E-Mail</strong></th>
 								<th><strong>Edit</strong></th>
 							</tr>
-							<?php allContactsViewandEdit() ?>
+							<?php christReplicaViewandEdit() ?>
 						</table>
 						
 						<?php endif; ?>
 					
 				</div>
 			
+			</div>
+			<br style="clear:both" />
+
+		</div>
+	</div>
+	
+<?php include $footer_path; ?>

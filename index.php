@@ -1,10 +1,12 @@
 <?php 
+#Note, all Menus are includes based on what the user presses
 $path = $_SERVER['DOCUMENT_ROOT'];
 $path .= "/online-bulk-sms/includes/defines.php";
 include $path;
 include $db_connect_path;
 include $functions_path;
 include $header_path;
+
 ?>
 	<div class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
 		<div class="container clearfix">
@@ -37,7 +39,7 @@ include $header_path;
 			include $_SERVER['DOCUMENT_ROOT'].'/online-bulk-sms/includes/topMenuIncludes/groups_top_menu_include.php';
 			echo "</div>";
 			
-			elseif(isset($_GET['contacts'])):
+			elseif(isset($_GET['contacts'])||(isset($_GET['user_id']))):
 			include $_SERVER['DOCUMENT_ROOT'].'/online-bulk-sms/includes/topMenuIncludes/contacts_top_menu_include.php';
 			?>
 

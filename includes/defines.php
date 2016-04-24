@@ -1,6 +1,6 @@
 <?php 
 #Home path to easily link CSS and JS only but not includes
-$_GLOBALS['home'] = "http://localhost/online-bulk-sms";
+$_GLOBALS['home'] = 'http://'.$_SERVER['HTTP_HOST'].'/online-bulk-sms';
 $home = $_GLOBALS['home']; 
 
 #Absolute paths for includes

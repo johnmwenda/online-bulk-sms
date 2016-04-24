@@ -31,7 +31,7 @@ include $header_path;
 				<table class="form">
 					<tr>
 						<th>
-							<label style="padding: 5px;background-color:#eee;">SMS TO GROUPS</label>
+							<label style="padding: 5px;background-color:#eee;">SMS TO Individuals</label>
 						</th>
 					</tr>
 					<tr>

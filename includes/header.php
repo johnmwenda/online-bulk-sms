@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="<?php echo $home?>/css/style.css" type="text/css" media="screen">
 	<!-- <link rel="stylesheet" href="css/style.min.css" type="text/css" media="screen"> -->
 	<!--[if IE]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<style type="text/css">
+	</style>
 	<script src="<?php echo $home?>/js/jquery-2.2.3.js"></script>
 	
 	<script> <!-- JQuery for send_sms.php page for the Recepient Tabs-->
