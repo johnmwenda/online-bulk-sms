@@ -40,10 +40,11 @@
 
 			<div id="nav" class="grid_9 omega">
 				<ul class="navigation">
+					<li><a href="<?php echo $home;?>/index.php?dashboard">DASHBOARD</a></li>
 					<li><a href="<?php echo $home;?>/index.php?send_sms">SEND SMS</a></li>
 					<li><a href="<?php echo $home;?>/index.php?groups">GROUPS</a></li>
 					<li><a href="<?php echo $home;?>/index.php?contacts">CONTACTS</a></li>
-					<li><a href="<?php echo $home;?>/index.php?settings">SETTINGS</a></li>
+					
 				</ul>
 			</div>
 

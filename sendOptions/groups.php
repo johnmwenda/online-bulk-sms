@@ -1,6 +1,7 @@
 <?php 
-$path = $_SERVER['DOCUMENT_ROOT'];
-$path .= "/online-bulk-sms/includes/defines.php";
+define('ROOT_PATH', dirname(dirname(__FILE__) ));
+$_GLOBALS['root_path'] = ROOT_PATH;
+$path = ROOT_PATH.'/includes/defines.php';
 include $path;
 include $db_connect_path;
 include $functions_path;

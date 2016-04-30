@@ -1,0 +1,4 @@
+user			database			host
+a5054332_sms 	a5054332_bulksms 	 	mysql11.000webhost.com
+password:000webhost
+	webhost012345

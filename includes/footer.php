@@ -1,4 +1,19 @@
+</div>
 <!-- <script type="text/javascript" src="js/scripts.min.js"></script> -->
+<script>
+	var checkboxes = $("input[type='checkbox']"),
+    submitButt = $("input[type='submit']");
+
+checkboxes.click(function() {
+    submitButt.attr("disabled", !checkboxes.is(":checked"));
+		if( checkboxes.is(":checked")==true){
+			submitButt.attr("style", "color:red;width:60px");
+		}
+		if(checkboxes.is(":checked")==false){
+			submitButt.attr("style", "color:#808080;width:60px");
+		}
+});
+</script>
 <script>
 function goBack() {
     window.history.back();

@@ -21,7 +21,9 @@
 	width: 90%; /*width: 1000px;*/
 	max-width: 1000px;
 	margin: auto;
+	
 }
+
 .columns{
 	-webkit-box-shadow: 0px 0px 6px rgba(0,0,0,0.05);
     box-shadow: 0px 0px 6px rgba(0,0,0,0.05);
@@ -30,11 +32,23 @@
 	}
 #home-table{ border-collapse: separate;
 			border-spacing: 10px 5px;
+			float:left;
+			width:30%;
 }
-#home-table td{-webkit-box-shadow: 0px 0px 6px rgba(0,0,0,0.05);
-    box-shadow: 0px 0px 6px rgba(0,0,0,0.05);
-	border-radius:5px;
-	width:23%;}
+
+#dashboard .side-dashboard{;}
+#dashboard .side-dashboard-wrapper{float:left;width:30%;margin-right:30px;    border-radius: 4px;
+    padding: 0 20px 20px 20px;
+    border: 1px solid rgba(0,0,0,.15);
+    -moz-box-shadow: 0 0 6px rgba(0,0,0,.05);
+    -webkit-box-shadow: 0 0 6px rgba(0,0,0,.05);
+    box-shadow: 0 0 6px rgba(0,0,0,.05);}
+#dashboard .center-dashboard{float:left;width:57%;border-radius: 4px;
+    padding: 0 20px 20px 20px;
+    border: 1px solid rgba(0,0,0,.15);
+    -moz-box-shadow: 0 0 6px rgba(0,0,0,.05);
+    -webkit-box-shadow: 0 0 6px rgba(0,0,0,.05);
+    box-shadow: 0 0 6px rgba(0,0,0,.05);}
 
 
 .clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}.clearfix:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}* html .clearfix,*:first-child+html .clearfix{zoom:1}

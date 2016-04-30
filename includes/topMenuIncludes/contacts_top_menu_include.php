@@ -38,7 +38,7 @@ function allContactsViewandEdit(){
 	}
 	else{
 			echo "	<h3 style=\"display:inline\">All Contacts</h3>
-					<span>&nbsp;&nbsp;&nbsp;[<a href=\" $home.'/pages/insert_contact.php\">Add new Contact</a>]</span>
+					<span>&nbsp;&nbsp;&nbsp;[<a href=\"$home/pages/insert_contact.php\">Add new Contact</a>]</span>
 					<span>&nbsp;&nbsp;&nbsp;[Upload Excel file]</span>
 					<h5>Members that are added here will be in a default group called \"ALL\"</h5>";
 		#select only members from Christ replica and display them on the table
@@ -59,12 +59,14 @@ function allContactsViewandEdit(){
 								<td>$telephone</td>
 								<td>$email</td>
 								<td><a href=\"?user_id=$user_id\">Edit</a></td>
+								<td><input type=\"checkbox\"  name=\"delete_list[]\" value=\"$user_id\" style=\"width:30px;height:15px;\"></td>
 				</tr>";	
 			}
 		}
 		
 	}
 }
+
 ?>
 				<div>
 				
@@ -75,6 +77,7 @@ function allContactsViewandEdit(){
 					
 							
 						<?php else: ?>
+						<form action="<?php echo $home.'/pages/delete_contacts.php';?>" method="post">
 						<table class="form">
 							<tr>
 								<th><strong>#</strong></th>
@@ -82,8 +85,10 @@ function allContactsViewandEdit(){
 								<th><strong>Telephone</strong></th>
 								<th><strong>E-Mail</strong></th>
 								<th><strong>Edit</strong></th>
+								<th><input style="width:60px" id="Button" type="submit" value="Delete" disabled></th>
 							</tr>
 							<?php allContactsViewandEdit() ?>
+						</form>
 						</table>
 						
 						<?php endif; ?>

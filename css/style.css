@@ -34,7 +34,7 @@ a:visited {
 	top:0px;
 	width:100%; 
 	height:auto; 
-    background-color: #FFFFFF;
+    background-color: #D4E4EA;
 	z-index:100;
 }
 #logo {
@@ -67,8 +67,12 @@ a:visited {
 
 /* JOHN EDITS */ 
 #content{
-	border: 1px solid rgba(0,0,0,0.15);
+	
 	padding:15px 1px 0 1px;
+	    border: 1px solid rgba(0,0,0,.15);
+    -moz-box-shadow: 0 0 6px rgba(0,0,0,.05);
+    -webkit-box-shadow: 0 0 6px rgba(0,0,0,.05);
+    box-shadow: 0 0 6px rgba(0,0,0,.05);
 }
 
 
@@ -464,6 +468,12 @@ cursor:pointer;vertical-align:middle;padding:5px 10px;line-height:1.5;border-rad
 
 .error{
 color:red
+}
+
+/*used by jquery to add class to delete button in all contacts view when a checkbox is selected*/ 
+.intro {
+    font-size: 100%;
+    color: red;
 }
 
 

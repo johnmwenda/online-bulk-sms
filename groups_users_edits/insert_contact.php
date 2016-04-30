@@ -1,6 +1,7 @@
 <?php 
-$path = $_SERVER['DOCUMENT_ROOT'];
-$path .= "/online-bulk-sms/includes/defines.php";
+define('ROOT_PATH', dirname(dirname(__FILE__) ));
+$_GLOBALS['root_path'] = ROOT_PATH;
+$path = ROOT_PATH.'/includes/defines.php';
 include $path;
 include $db_connect_path;
 include $header_path;
@@ -128,7 +129,7 @@ function displayIterativeDatatoConcatenate(){
 	$string1 = null;
 	if(!empty($group_list) ){
     foreach($group_list as $check) {
-			$check_name=preg_replace('/[0-9]+/', '', $check);
+			$check_name=substr($check, 1);
 			$string1.= "<span><input type=\"hidden\" name=\"group_list[]\" value=\"$check\"/>$check_name</span><br/>";
 		}
 	return $string1;
@@ -200,6 +201,13 @@ function insertData(){
 				<div>
 				
 					<h3>Insert a new Contact</h3>
+					<?php echo getcwd();
+					echo "<br>";
+					echo $_SERVER['PHP_SELF'];
+					echo "<br>";
+					echo dirname(getcwd());
+					echo "<br>";
+					?>
 					<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 						<table class="form">
 							<tr>

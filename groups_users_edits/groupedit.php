@@ -1,6 +1,7 @@
 <?php 
-$path = $_SERVER['DOCUMENT_ROOT'];
-$path .= "/online-bulk-sms/includes/defines.php";
+define('ROOT_PATH', dirname(dirname(__FILE__) ));
+$_GLOBALS['root_path'] = ROOT_PATH;
+$path = ROOT_PATH.'/includes/defines.php';
 include $path;
 include $db_connect_path;
 include $header_path;
@@ -10,6 +11,7 @@ function christReplicaViewandEdit(){
 	if(isset($_GET['user_id'])&&ctype_digit($_GET['user_id'])){
 		#if user_id is set then retrieve details of the user so that they can be editted
 		$user_id=$_GET['user_id'];
+		mysqli_real_escape_string($connect, $user_id);
 		$SQL = "select * from users where user_id=$user_id";
 		$run_SQL = mysqli_query($connect, $SQL);
 		$row_SQL = mysqli_fetch_array($run_SQL);
@@ -19,6 +21,7 @@ function christReplicaViewandEdit(){
 		$email = $row_SQL['email'];
 		
 		echo "
+				<h3>Christ Replica Group</h3>
 				<h4>Edit details of member </h4>
 				<div>
 					<form>
@@ -40,10 +43,22 @@ function christReplicaViewandEdit(){
 					</div> ";
 	}
 	else{
+		if(isset($_GET['group_id'])){
+			
+		$group_id = $_GET['group_id'];
 		#select only members from Christ replica and display them on the table
-		$SQL = "select * from christreplica,users where christreplica.user_id=users.user_id ";
+					$group_id = mysqli_real_escape_string($connect, $group_id);
+					ECho $group_id;
+					$SQL = "select name from groups where group_id=$group_id";
+					$run_SQL = mysqli_query($connect, $SQL);
+					$row_SQL=mysqli_fetch_array($run_SQL);	
+					$group_name=$row_SQL['name'];
+					$group_name_stripped = str_replace(' ','',$row_SQL['name']);
+					
+		$SQL = "select * from $group_name_stripped,users where $group_name_stripped.user_id=users.user_id ";
 		$run_SQL = mysqli_query($connect, $SQL);
 		$num=0;
+		echo "<span><h3 style=\"display:inline-block;\">$group_name Group</h3></span><span>Add members to the group<span>"; //Echo customized name of the Group
 		if(mysqli_num_rows($run_SQL)){
 			while($row_SQL = mysqli_fetch_array($run_SQL) ){
 				$num++;
@@ -57,11 +72,11 @@ function christReplicaViewandEdit(){
 									<td>$firstname $lastname </td>
 									<td>$telephone</td>
 									<td>$email</td>
-									<td><a href=\"?user_id=$user_id\">Edit</a></td>
 					</tr>";	
+				}
 			}
-		}
 		
+		}
 	}
 }
 ?>
@@ -70,23 +85,7 @@ function christReplicaViewandEdit(){
 
 			<div id="content" class="grid_12">
 				<div><h2>Online Bulk SMS System</h2></div>
-				
-				<!-- JOHN-EDIT replaced with tables<div id="col1" class="columns">
-				<h3>Messages sent today</h3>
-				<p>2000</p>
-				</div>
-				<div id="col2" class="columns">
-				<h3>Total sent messages</h3>
-				<p>2000</p>
-				</div>
-				<div id="col3" class="columns">
-				<h3>Total Unsent messages</h3>
-				<p>2000</p></div>
-				<div id="col4" class="columns">
-				<h3>Balance</h3>
-				<p>2000</p></div>	-->
 				<div>
-					<h3>Christ Replica Group</h3>
 					<?php if(isset($_GET['user_id'])&&ctype_digit($_GET['user_id'])):?>
 					
 					<?php christReplicaViewandEdit() ?>
@@ -100,7 +99,7 @@ function christReplicaViewandEdit(){
 								<th><strong>Name</strong></th>
 								<th><strong>Telephone</strong></th>
 								<th><strong>E-Mail</strong></th>
-								<th><strong>Edit</strong></th>
+								
 							</tr>
 							<?php christReplicaViewandEdit() ?>
 						</table>
